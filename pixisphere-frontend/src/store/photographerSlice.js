@@ -1,5 +1,3 @@
-"use client";
-
 import { createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 
 export const fetchPhotographers = createAsyncThunk("photographers/fetchPhotographers", async (category, {rejectWithValue}) => {
