@@ -9,7 +9,7 @@ export const fetchPhotographers = createAsyncThunk("photographers/fetchPhotograp
             return JSON.parse(cached);
         }
 
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${category}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/${category}`);
 
         if(!res.ok) {
             return rejectWithValue(`Error: ${res.status}`);
