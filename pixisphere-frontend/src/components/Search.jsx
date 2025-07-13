@@ -1,5 +1,5 @@
 import { addSearchData, removeSearchedData } from '@/store/SearchSlice';
-import { useParams } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,6 +14,12 @@ const Search = () => {
   const [searchedData, setSearchedData] = useState([]);
 
   const dispatch = useDispatch();
+  const pathname = usePathname();
+
+  const hideSearchOn = ['/', '/category/maternity/profile/userId'];
+
+  if (hideSearchOn.includes(pathname)) return null;
+
 
   useEffect(() => {
     if(searchText.trim() === "") {
@@ -52,7 +58,7 @@ const Search = () => {
         <input
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
-        className="outline-none w-72 bg-transparent text-gray-200 placeholder-gray-400"
+        className="bg-gray-800 outline-none w-full text-gray-200 placeholder-gray-400"
         type="text"
         name="search"
         id="search"

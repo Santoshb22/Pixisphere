@@ -45,7 +45,7 @@ const CategoryPage = ({ params }) => {
         {
           filteredData.length > 0? (
             filteredData?.map((item) => (
-              <PhotographerCard key={item.id} data={item} />
+              <PhotographerCard key={item.id} data={item} category = {category}/>
             ))
           ) : (
             <p>No result found</p>

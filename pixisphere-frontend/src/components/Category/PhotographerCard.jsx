@@ -1,9 +1,11 @@
 import React from "react";
 import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 import Carousel from "./Carousel";
+import { useRouter } from "next/navigation";
 
-const PhotographerCard = ({ data }) => {
+const PhotographerCard = ({ data, category }) => {
   const {
+    id,
     name,
     location,
     rating,
@@ -14,10 +16,15 @@ const PhotographerCard = ({ data }) => {
     profilePic,
     portfolio,
   } = data;
+  const router = useRouter();
 
+  const handleProfoleClick = () => {
+    router.push(`/category/${category}/profile/${id}`)
+  }
   return (
     <div 
-    className="bg-gray-950 text-white rounded-2xl shadow-md overflow-hidden max-w-md mx-auto my-4 border border-gray-700 hover:shadow-lg transition-shadow">
+    onClick={handleProfoleClick}
+    className="cursor-pointer bg-gray-950 text-white rounded-2xl shadow-md overflow-hidden max-w-md mx-auto my-4 border border-gray-700 hover:shadow-lg transition-shadow">
       <div className="flex items-center gap-4 p-4">
         <img
           src={profilePic}

@@ -25,11 +25,18 @@ export const fetchPhotographers = createAsyncThunk("photographers/fetchPhotograp
 const photographerSlice = createSlice({
     name: "photographer",
     initialState: {
+        category: "",
         maternity: [],
         wedding: [],
         loading: false,
         error: null,
     },
+    reducers: {
+        addPhotographerCategory: (state, action) => {
+            state.category = action.payload
+        }
+    }, 
+
     extraReducers: builder => {
         builder
         .addCase(fetchPhotographers.pending, state => {
