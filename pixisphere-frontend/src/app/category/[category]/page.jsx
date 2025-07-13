@@ -17,6 +17,7 @@ const CategoryPage = ({ params }) => {
   const error = useSelector(state => state.photographer?.error);
   const [filteredData, setFilteredData] = useState(data);
 
+  console.log("data", data);
  useEffect(() => {
   if (searchedData && searchedData.length > 0) {
     setFilteredData(searchedData);

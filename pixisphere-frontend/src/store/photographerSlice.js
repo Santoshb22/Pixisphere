@@ -1,5 +1,9 @@
 import { createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+console.log("apiUrl", apiUrl); // undefined
+
+
 export const fetchPhotographers = createAsyncThunk("photographers/fetchPhotographers", async (category, {rejectWithValue}) => {
     try {
         const cached = localStorage.getItem(category);
@@ -7,7 +11,7 @@ export const fetchPhotographers = createAsyncThunk("photographers/fetchPhotograp
             return JSON.parse(cached);
         }
 
-        const res = await fetch(`http://localhost:3001/${category}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${category}`);
 
         if(!res.ok) {
             return rejectWithValue(`Error: ${res.status}`);

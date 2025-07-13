@@ -1,5 +1,4 @@
-{
-  "maternity": [
+export const maternity = [
     {
       "id": 1,
       "name": "Ravi Studio",
@@ -300,7 +299,4 @@
         }
       ]
     }
-  ],
-
-  "wedding": []
-}
+]
