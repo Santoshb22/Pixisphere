@@ -16,7 +16,6 @@ const Page = () => {
   const [usersData, setUsersData] = useState(null);
 
   useEffect(() => {
-    // If data for this category not loaded yet, fetch it
     if (!data || data.length === 0) {
       dispatch(fetchPhotographers(category));
     }

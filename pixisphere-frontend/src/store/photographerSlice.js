@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-console.log("apiUrl", apiUrl); // undefined
-
 
 export const fetchPhotographers = createAsyncThunk("photographers/fetchPhotographers", async (category, {rejectWithValue}) => {
     try {
