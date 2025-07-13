@@ -16,7 +16,8 @@ const PhotographerCard = ({ data }) => {
   } = data;
 
   return (
-    <div className="bg-gray-950 text-white rounded-2xl shadow-md overflow-hidden max-w-md mx-auto my-4 border border-gray-700 hover:shadow-lg transition-shadow">
+    <div 
+    className="bg-gray-950 text-white rounded-2xl shadow-md overflow-hidden max-w-md mx-auto my-4 border border-gray-700 hover:shadow-lg transition-shadow">
       <div className="flex items-center gap-4 p-4">
         <img
           src={profilePic}
@@ -41,7 +42,6 @@ const PhotographerCard = ({ data }) => {
         )
       }
 
-      {/* Info Section */}
       <div className="p-4 space-y-2">
         <p className="text-gray-300 text-sm">{bio}</p>
         <p className="text-sm">

@@ -1,12 +1,14 @@
 import React from 'react';
 
-const FilterByRating = ({ filteredData, setFilteredData }) => {
+const FilterByRating = ({ data, setFilteredData }) => {
 
   const handleRating = (e) => {
     const selectedRating = Number(e.target.value);
-    
-    const filtered = filteredData.filter(item => Math.floor(item.rating) === selectedRating);
-    console.log(filtered);
+    if(selectedRating === 0) {
+      setFilteredData(data);
+      return
+    }
+    const filtered = data.filter(item => Math.floor(item.rating) === selectedRating);
     setFilteredData(filtered);
   };
 
@@ -19,7 +21,7 @@ const FilterByRating = ({ filteredData, setFilteredData }) => {
         name="filter"
         id="filter"
       >
-        <option value="">All</option>
+        <option value="0">All</option>
         <option value="1">1 ★</option>
         <option value="2">2 ★</option>
         <option value="3">3 ★</option>

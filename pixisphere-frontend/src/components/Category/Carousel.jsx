@@ -4,10 +4,8 @@ import React, { useState } from 'react';
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
 const Carousel = ({ portfolio }) => {
-  const [currIdx, setCurrIdx] = useState(0); // start from first
+  const [currIdx, setCurrIdx] = useState(0); 
   const totalImg = portfolio.length;
-
-  console.log(portfolio);
 
   const handleNext = () => {
     setCurrIdx((prev) => (prev + 1) % totalImg);
